@@ -13,7 +13,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 16.h,right: 22.w,left: 22.w),
+      padding: EdgeInsets.symmetric(horizontal: 22.w),
       child: Column(
         children: [
           Text(
@@ -33,6 +33,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400),
           ),
+          SizedBox(height: 16.h,),
           CustomButton(
             text: "Let's Start ->",
             onTap: (){},

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
+import 'package:todo_app/feature/presentation/widgets/body_login_screen.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,7 +19,9 @@ class _StartScreenState extends State<LoginScreen> {
         children: [
           SizedBox(
             height: 550.h,
-            child: Image.asset(ImgAssets.picture),),
+            child: Image.asset(ImgAssets.picture),
+          ),
+          const BodyLoginScreen()
         ],
       ),
     );

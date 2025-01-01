@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
+import 'package:todo_app/feature/presentation/widgets/phone_drop_down.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hint;
   final int maxLine;
   final void Function(String?)? onSaved;
   final void Function(String)? onChange;
+  final bool isSuffix;
   final bool isPassword;
   final bool isPhoneNumber;
 
@@ -16,7 +18,8 @@ class CustomTextField extends StatefulWidget {
     this.maxLine = 1,
     this.onSaved,
     this.onChange,
-    this.isPassword = false,
+    this.isSuffix = false,
+    this.isPassword = true,
     this.isPhoneNumber = false,
   });
 
@@ -25,8 +28,7 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  bool isPassHidden = false;
-
+  bool isPassHidden = false ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,40 +43,33 @@ class _CustomTextFieldState extends State<CustomTextField> {
             return null;
           }
         },
-        obscureText: widget.isPassword && isPassHidden,
+        obscureText: widget.isSuffix && widget.isPassword && isPassHidden ,
         obscuringCharacter: '*',
         cursorColor: AppColors.appColor,
         maxLines: widget.maxLine,
         decoration: InputDecoration(
-          prefix:widget.isPhoneNumber ?
-          DropdownButton<String>(
-            // iconSize: 15,
-            value: '+12',
-            underline: const SizedBox(),
-            items: ['+20', '+1', '+12'].map((String code) {
-              return DropdownMenuItem<String>(
-                value: code,
-                child: Text(code),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-
-            },
-          ) : null,
-          suffixIcon: widget.isPassword
+          prefixIcon: widget.isPhoneNumber ?
+          const PhoneDropDown() : null,
+          suffixIcon:widget.isSuffix ? widget.isPassword
               ? IconButton(
-                  onPressed: () {
-                    isPassHidden = !isPassHidden;
-                    setState(() {});
-                  },
-                  icon: Icon(
-                    isPassHidden
-                        ? Icons.visibility_off_outlined
-                        : Icons.visibility_outlined,
-                    color: Colors.black26,
-                  ),
-                )
-              : null,
+            onPressed: () {
+              isPassHidden = !isPassHidden;
+              setState(() {});
+            },
+            icon: Icon(
+              isPassHidden
+                  ? Icons.visibility_off_outlined
+                  : Icons.visibility_outlined,
+              color: Colors.black26,
+            ),
+          )
+              : IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.calendar_month_outlined,
+              color: AppColors.appColor,
+            ),
+          ): null,
           hintText: widget.hint,
           hintStyle: const TextStyle(color: AppColors.hintColor),
           border: buildBorder(),
@@ -94,21 +89,3 @@ OutlineInputBorder buildBorder([color]) {
     ),
   );
 }
-
-/*
-Row(
-            children: [
-            DropdownButton<String>(
-              value: '+20',
-              underline: const SizedBox(), // لإزالة الخط السفلي
-              items: ['+20', '+1', '+44'].map((String code) {
-                return DropdownMenuItem<String>(
-                  value: code,
-                  child: Text(code),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-              },
-            ),
-          ],),
- */

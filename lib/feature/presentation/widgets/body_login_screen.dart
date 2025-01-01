@@ -24,22 +24,17 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
           ),
           const CustomTextField(
             hint: '123 456-7890',
-            isPhoneNumber: false,
+            isPhoneNumber: true,
           ),
-          // DropdownButtonFormField(
-          //   value: '+20',
-          //
-          //   items: items,
-          //   onChanged: onChanged,
-          // ),
           const CustomTextField(
             hint: 'Password...',
-            isPassword: true,
+            isSuffix: true,
           ),
           CustomButton(
             text: 'Sign In',
             onTap: () {},
           ),
+
         ],
       ),
     );

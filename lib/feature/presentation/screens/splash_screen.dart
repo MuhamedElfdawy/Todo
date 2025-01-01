@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/utils/app_color.dart';
+import 'package:todo_app/core/utils/assets_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,10 +12,10 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.appColor,
       body: Center(
-        child: Text('Tasky',style: TextStyle(color: Colors.white,fontSize: 40,fontWeight: FontWeight.bold),),
+        child: Image.asset(ImgAssets.task),
       ),
     );
   }

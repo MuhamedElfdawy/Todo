@@ -15,9 +15,9 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.all(22.w),
+        margin: EdgeInsets.only(top: 32.h,bottom: 24.h,right: 22.w,left: 22.w),
         width: MediaQuery.of(context).size.width,
-        height: 49.h,
+        height: 55.h,
         decoration: BoxDecoration(
           color: AppColors.appColor,
           borderRadius: BorderRadius.circular(12.r),

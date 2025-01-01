@@ -5,44 +5,51 @@ import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
 
-class BodyLoginScreen extends StatefulWidget {
-  const BodyLoginScreen({super.key});
+class BodyRegisterScreen extends StatefulWidget {
+  const BodyRegisterScreen({super.key});
 
   @override
-  State<BodyLoginScreen> createState() => _BodyLoginScreenState();
+  State<BodyRegisterScreen> createState() => _BodyRegisterScreenState();
 }
 
-class _BodyLoginScreenState extends State<BodyLoginScreen> {
+class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Login',
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+          const CustomTextField(
+            hint: 'Name...',
           ),
           const CustomTextField(
             hint: '123 456-7890',
             isPhoneNumber: true,
           ),
           const CustomTextField(
+            hint: 'Years of experience...',
+          ),
+          const CustomTextField(
+            hint: 'Choose experience Level',
+          ),
+          const CustomTextField(
+            hint: 'Address...',
+          ),
+          const CustomTextField(
             hint: 'Password...',
             isSuffix: true,
           ),
           CustomButton(
-            text: 'Sign In',
             onTap: () {},
+            text: 'Sign up',
           ),
-           CustomTextButton(
-             onPress: (){
-               Navigator.pushNamed(context, Routes.registerRoute);
-             },
-            hintText: 'Didn’t have any account?',
-            buttonText: 'Sign Up here',
-          )
+          CustomTextButton(
+            onPress: () {
+              Navigator.pushNamed(context, Routes.loginRoute);
+            },
+            hintText: 'Already have any account?',
+            buttonText: 'Sign in',
+          ),
         ],
       ),
     );

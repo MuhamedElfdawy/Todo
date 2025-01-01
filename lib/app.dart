@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/config/themes/app_theme.dart';
 import 'package:todo_app/core/utils/app_utils.dart';
 import 'package:todo_app/feature/presentation/screens/login_screen.dart';
-import 'package:todo_app/feature/presentation/widgets/custom_suffix_icon.dart';
 
 class ToDoApp extends StatelessWidget {
   const ToDoApp({super.key});

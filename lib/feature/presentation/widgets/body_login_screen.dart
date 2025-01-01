@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
+import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
 
 class BodyLoginScreen extends StatefulWidget {
@@ -34,7 +35,10 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
             text: 'Sign In',
             onTap: () {},
           ),
-
+          const CustomTextButton(
+            hintText: 'Didn’t have any account?',
+            buttonText: 'Sign Up here',
+          )
         ],
       ),
     );

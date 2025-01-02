@@ -26,19 +26,19 @@ class ProfileScreen extends StatelessWidget {
                 content: 'Muhamed Fdawy',
               ),
               const ProfileData(
-                title: 'Phone',
+                title: 'PHONE',
                 content: '+20 100 803-6610',
               ),
               const ProfileData(
-                title: 'Level',
+                title: 'LEVEL',
                 content: 'Senior',
               ),
               const ProfileData(
-                title: 'Years of experience',
+                title: 'YEARS OF EXPERIENCE',
                 content: '7 years',
               ),
               const ProfileData(
-                title: 'Location',
+                title: 'LOCATION',
                 content: 'Sharkia, Egypt',
               ),
             ],

@@ -33,7 +33,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 20.h),
+      padding: EdgeInsets.symmetric(vertical: 8.h),
       child: TextFormField(
         onChanged: widget.onChange,
         onSaved: widget.onSaved,

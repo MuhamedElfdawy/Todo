@@ -22,8 +22,12 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
         children: [
           Text(
             'Login',
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 24.sp,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          SizedBox(height: 16.h,),
           const CustomTextField(
             hint: '123 456-7890',
             isPhoneNumber: true,
@@ -38,10 +42,10 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
               Navigator.pushNamed(context, Routes.homeRoute);
             },
           ),
-           CustomTextButton(
-             onPress: (){
-               Navigator.pushNamed(context, Routes.registerRoute);
-             },
+          CustomTextButton(
+            onPress: () {
+              Navigator.pushNamed(context, Routes.registerRoute);
+            },
             hintText: 'Didn’t have any account?',
             buttonText: 'Sign Up here',
           )

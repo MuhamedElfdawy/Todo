@@ -43,14 +43,18 @@ class _HomeScreenState extends State<HomeScreen> {
               const FilterActiveButton(),
               Expanded(
                   child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: 3,
                 itemBuilder: (context, index) => const TaskItem(),
               ))
             ],
           ),
         ),
       ),
-      floatingActionButton: const CustomFloatingButton(),
+      floatingActionButton: CustomFloatingButton(
+        toAddTask: (){
+          Navigator.pushNamed(context, Routes.addTaskRoute);
+        },
+      ),
     );
   }
 }

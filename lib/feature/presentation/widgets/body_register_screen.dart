@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/config/routes/app_routes.dart';
+import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
@@ -30,7 +31,10 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
           const CustomTextField(
             hint: 'Years of experience...',
           ),
-          const CustomDropDownButton(),
+          const CustomDropDownButton(
+            items: Constants.experience,
+            isRegister: true,
+          ),
           const CustomTextField(
             hint: 'Address...',
           ),

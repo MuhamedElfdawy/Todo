@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
 
 class CustomFloatingButton extends StatelessWidget {
-  const CustomFloatingButton({super.key});
+
+  final void Function()? toAddTask;
+  const CustomFloatingButton({super.key, this.toAddTask});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CustomFloatingButton extends StatelessWidget {
           ),
           SizedBox(height: 16.h,),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: toAddTask,
             heroTag: 'add task',
             backgroundColor: AppColors.appColor,
             shape:  const CircleBorder(),

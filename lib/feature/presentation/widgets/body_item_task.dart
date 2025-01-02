@@ -26,14 +26,14 @@ class BodyItemTask extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 4.h,
+          height: 6.h,
         ),
         Text(
           'This application is designed for s...',
           style: TextStyle(fontSize: 14.sp, color: AppColors.hintColor),
         ),
         SizedBox(
-          height: 4.h,
+          height: 6.h,
         ),
         Row(
 

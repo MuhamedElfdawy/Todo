@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
-import 'package:todo_app/core/utils/app_utils.dart';
-import 'package:todo_app/core/utils/assets_manager.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
 import 'package:todo_app/feature/presentation/widgets/filter_active_button.dart';
 import 'package:todo_app/feature/presentation/widgets/floating_button.dart';
@@ -39,7 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const FilterActiveButton(),
-              const TaskItem(),
+              Expanded(
+                  child: ListView.builder(
+                    itemCount: 6,
+                itemBuilder: (context, index) => TaskItem(),
+              ))
             ],
           ),
         ),

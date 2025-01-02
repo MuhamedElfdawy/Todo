@@ -5,6 +5,7 @@ import 'package:todo_app/feature/presentation/screens/profile_screen.dart';
 import 'package:todo_app/feature/presentation/screens/register_screen.dart';
 import 'package:todo_app/feature/presentation/screens/splash_screen.dart';
 import 'package:todo_app/feature/presentation/screens/start_screen.dart';
+import 'package:todo_app/feature/presentation/screens/task_details_screen.dart';
 
 class Routes
 {
@@ -15,6 +16,7 @@ class Routes
   static const String homeRoute = '/homeScreen';
   static const String profileRoute = '/profileScreen';
   static const String addTaskRoute = '/addTaskScreen';
+  static const String taskDetailsRoute = '/taskDetailsScreen';
 }
 
 final routes = {
@@ -25,4 +27,5 @@ final routes = {
   Routes.homeRoute : (context) => const HomeScreen(),
   Routes.profileRoute : (context) => const ProfileScreen(),
   Routes.addTaskRoute : (context) => const AddTaskScreen(),
+  Routes.taskDetailsRoute : (context) => const TaskDetailsScreen(),
 };

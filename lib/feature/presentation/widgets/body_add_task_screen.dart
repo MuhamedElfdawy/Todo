@@ -42,7 +42,10 @@ class BodyAddTaskScreen extends StatelessWidget {
             isSuffix: true,
             isPassword: false,
           ),
-          CustomButton(onTap: () {}, text: 'Add task')
+          CustomButton(
+            text: 'Add task',
+            onTap: () {},
+          )
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
 import 'package:todo_app/feature/presentation/widgets/body_item_task.dart';
 
@@ -26,7 +27,11 @@ class _TaskItemState extends State<TaskItem> {
             height: 65.h,
             width: 80.w,
           ),
-          const BodyItemTask(),
+          BodyItemTask(
+            onPress: (){
+              Navigator.pushNamed(context, Routes.taskDetailsRoute);
+            },
+          ),
           IconButton(
             onPressed: (){},
             icon: const Icon(Icons.more_vert,),

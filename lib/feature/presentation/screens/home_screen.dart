@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 isHomeScreen: true,
                 title: 'Home',
                 fontSize: 24.sp,
-                toProfile: (){
+                toProfile: () {
                   Navigator.pushNamed(context, Routes.profileRoute);
                 },
               ),
@@ -42,16 +42,17 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const FilterActiveButton(),
               Expanded(
-                  child: ListView.builder(
-                    itemCount: 3,
-                itemBuilder: (context, index) => const TaskItem(),
-              ))
+                child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) => const TaskItem(),
+                ),
+              ),
             ],
           ),
         ),
       ),
       floatingActionButton: CustomFloatingButton(
-        toAddTask: (){
+        toAddTask: () {
           Navigator.pushNamed(context, Routes.addTaskRoute);
         },
       ),

@@ -34,7 +34,9 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
           ),
           CustomButton(
             text: 'Sign In',
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, Routes.homeRoute);
+            },
           ),
            CustomTextButton(
              onPress: (){

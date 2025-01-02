@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
 
-class TaskState extends StatelessWidget {
+class FilterButton extends StatelessWidget {
   final String text;
   final bool isActive;
-  const TaskState({super.key, required this.text, this.isActive = false});
+  const FilterButton({super.key, required this.text, this.isActive = false});
   @override
   Widget build(BuildContext context) {
     return Container(

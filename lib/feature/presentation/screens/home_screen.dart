@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
-import 'package:todo_app/core/utils/constants.dart';
+import 'package:todo_app/core/utils/app_utils.dart';
+import 'package:todo_app/core/utils/assets_manager.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
-import 'package:todo_app/feature/presentation/widgets/task_state.dart';
+import 'package:todo_app/feature/presentation/widgets/filter_active_button.dart';
+import 'package:todo_app/feature/presentation/widgets/floating_button.dart';
+import 'package:todo_app/feature/presentation/widgets/task_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,32 +16,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  String activeButton = 'All';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: AppColors.appColor,
-        shape: const CircleBorder(),
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 32.sp,
-        ),
-      ),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 22.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(
+              CustomAppBar(
                 isHomeScreen: true,
                 title: 'Home',
-                fontSize: 24,
+                fontSize: 24.sp,
               ),
               Text(
                 'My Tasks',
@@ -48,26 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: AppColors.hintColor,
                 ),
               ),
-              Row(
-                children: Constants.filters
-                    .map(
-                      (filter) => GestureDetector(
-                        onTap: () {
-                          activeButton = filter ;
-                          setState(() {});
-                        },
-                        child: TaskState(
-                          text: filter,
-                          isActive: activeButton == filter,
-                        ),
-                      ),
-                    )
-                    .toList(),
-              )
+              const FilterActiveButton(),
+              const TaskItem(),
             ],
           ),
         ),
       ),
+      floatingActionButton: const CustomFloatingButton(),
     );
   }
 }

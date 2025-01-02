@@ -21,12 +21,12 @@ class CustomAppBar extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          isHomeScreen ?
-          const SizedBox() :
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(ImgAssets.arrowBack),
-          ) ,
+          isHomeScreen
+              ? const SizedBox()
+              : IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(ImgAssets.arrowBack),
+                ),
           Text(
             title,
             style: TextStyle(
@@ -38,28 +38,18 @@ class CustomAppBar extends StatelessWidget {
           isHomeScreen
               ? Row(
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: CircleAvatar(
-                        backgroundColor: Colors.black,
-                        radius: 14.r,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 12.r,
-                          child: const Icon(
-                            Icons.person_outline,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
                     IconButton(
                         onPressed: () {},
-                        icon: const Icon(
+                        icon: Icon(
+                          Icons.account_circle_outlined,
+                          size: 28.sp,
+                        )),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(
                           Icons.logout,
                           color: AppColors.appColor,
+                          size: 28.sp,
                         )),
                   ],
                 )

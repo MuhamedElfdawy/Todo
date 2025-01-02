@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                   child: ListView.builder(
                     itemCount: 6,
-                itemBuilder: (context, index) => TaskItem(),
+                itemBuilder: (context, index) => const TaskItem(),
               ))
             ],
           ),

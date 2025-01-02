@@ -17,52 +17,55 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        isHomeScreen ?
-        const SizedBox() :
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(ImgAssets.arrowBack),
-        ) ,
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: fontSize.sp,
-            fontWeight: FontWeight.bold,
+    return Padding(
+      padding: EdgeInsets.only(bottom: 16.h),
+      child: Row(
+        children: [
+          isHomeScreen ?
+          const SizedBox() :
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(ImgAssets.arrowBack),
+          ) ,
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: fontSize.sp,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const Spacer(),
-        isHomeScreen
-            ? Row(
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 14.r,
+          const Spacer(),
+          isHomeScreen
+              ? Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 12.r,
-                        child: const Icon(
-                          Icons.person_outline,
+                        backgroundColor: Colors.black,
+                        radius: 14.r,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 12.r,
+                          child: const Icon(
+                            Icons.person_outline,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.logout,
-                        color: AppColors.appColor,
-                      )),
-                ],
-              )
-            : const SizedBox(),
-      ],
+                    SizedBox(
+                      width: 20.w,
+                    ),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.logout,
+                          color: AppColors.appColor,
+                        )),
+                  ],
+                )
+              : const SizedBox(),
+        ],
+      ),
     );
   }
 }

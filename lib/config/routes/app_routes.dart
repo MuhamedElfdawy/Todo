@@ -12,8 +12,8 @@ class Routes
 }
 
 final routes = {
-  Routes.initialRoute : (context) => SplashScreen(),
-  Routes.startRoute : (context) => StartScreen(),
-  Routes.loginRoute : (context) => LoginScreen(),
-  Routes.registerRoute : (context) => RegisterScreen(),
+  Routes.initialRoute : (context) => const SplashScreen(),
+  Routes.startRoute : (context) => const StartScreen(),
+  Routes.loginRoute : (context) => const LoginScreen(),
+  Routes.registerRoute : (context) => const RegisterScreen(),
 };

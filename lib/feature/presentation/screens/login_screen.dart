@@ -15,10 +15,10 @@ class _StartScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           SizedBox(
-            height: 550.h,
+            height: 500.h,
             child: Image.asset(ImgAssets.picture),
           ),
           const BodyLoginScreen()

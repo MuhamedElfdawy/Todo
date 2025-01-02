@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
+import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
 
@@ -16,7 +17,7 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.only(left: 24.w,right: 24.w,bottom: 32.w),
       child: Column(
         children: [
           const CustomTextField(
@@ -29,9 +30,7 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
           const CustomTextField(
             hint: 'Years of experience...',
           ),
-          const CustomTextField(
-            hint: 'Choose experience Level',
-          ),
+          const CustomDropDownButton(),
           const CustomTextField(
             hint: 'Address...',
           ),

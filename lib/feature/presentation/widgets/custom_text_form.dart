@@ -28,7 +28,8 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  bool isPassHidden = false ;
+  bool isPassHidden = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,14 +44,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
             return null;
           }
         },
-        obscureText: widget.isSuffix && widget.isPassword && isPassHidden ,
+        obscureText: widget.isSuffix && widget.isPassword && isPassHidden,
         obscuringCharacter: '*',
         cursorColor: AppColors.appColor,
         maxLines: widget.maxLine,
         decoration: InputDecoration(
           prefixIcon: widget.isPhoneNumber ?
           const PhoneDropDown() : null,
-          suffixIcon:widget.isSuffix ? widget.isPassword
+          suffixIcon: widget.isSuffix ? widget.isPassword
               ? IconButton(
             onPressed: () {
               isPassHidden = !isPassHidden;
@@ -69,7 +70,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               Icons.calendar_month_outlined,
               color: AppColors.appColor,
             ),
-          ): null,
+          ) : null,
           hintText: widget.hint,
           hintStyle: const TextStyle(color: AppColors.hintColor),
           border: buildBorder(),

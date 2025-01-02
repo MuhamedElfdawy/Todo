@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/core/utils/app_color.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
 import 'package:todo_app/feature/presentation/widgets/filter_active_button.dart';
@@ -27,6 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 isHomeScreen: true,
                 title: 'Home',
                 fontSize: 24.sp,
+                toProfile: (){
+                  Navigator.pushNamed(context, Routes.profileRoute);
+                },
               ),
               Text(
                 'My Tasks',

@@ -8,12 +8,18 @@ class CustomAppBar extends StatelessWidget {
   final String title;
   final double fontSize;
   final bool isHomeScreen;
+  final void Function()? toProfile;
+  final void Function()? logout;
+  final void Function()? arrowBack;
 
-  const CustomAppBar(
-      {super.key,
-      required this.title,
-      this.fontSize = 16,
-      this.isHomeScreen = false});
+  const CustomAppBar({
+    super.key,
+    required this.title,
+    this.fontSize = 16,
+    this.isHomeScreen = false,
+    this.toProfile,
+    this.logout, this.arrowBack,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +28,9 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           isHomeScreen
-              ? const SizedBox()
+              ?  SizedBox(width: 0.w,)
               : IconButton(
-                  onPressed: () {},
+                  onPressed: arrowBack,
                   icon: SvgPicture.asset(ImgAssets.arrowBack),
                 ),
           Text(
@@ -39,13 +45,13 @@ class CustomAppBar extends StatelessWidget {
               ? Row(
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: toProfile,
                         icon: Icon(
                           Icons.account_circle_outlined,
                           size: 28.sp,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: logout,
                         icon: Icon(
                           Icons.logout,
                           color: AppColors.appColor,

@@ -13,6 +13,7 @@ class CustomFloatingButton extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () {},
+            heroTag: 'qr code',
             backgroundColor: AppColors.whiteColor.withOpacity(0.4),
             shape: const CircleBorder(),
             child: Icon(
@@ -24,7 +25,7 @@ class CustomFloatingButton extends StatelessWidget {
           SizedBox(height: 16.h,),
           FloatingActionButton(
             onPressed: () {},
-
+            heroTag: 'add task',
             backgroundColor: AppColors.appColor,
             shape:  const CircleBorder(),
             child: Icon(

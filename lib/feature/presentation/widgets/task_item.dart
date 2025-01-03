@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
 import 'package:todo_app/feature/presentation/widgets/body_item_task.dart';
+import 'package:todo_app/feature/presentation/widgets/icon_more_vert.dart';
 
 class TaskItem extends StatefulWidget {
   const TaskItem({super.key});
@@ -28,14 +29,12 @@ class _TaskItemState extends State<TaskItem> {
             width: 80.w,
           ),
           BodyItemTask(
-            onPress: (){
+            onPress: () {
               Navigator.pushNamed(context, Routes.taskDetailsRoute);
             },
           ),
-          IconButton(
-            onPressed: (){},
-            icon: const Icon(Icons.more_vert,),
-            iconSize: 28.sp,
+          IconMoreVert(
+            onPress: () {},
           ),
         ],
       ),

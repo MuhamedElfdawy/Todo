@@ -21,7 +21,6 @@ class _TaskItemState extends State<TaskItem> {
       margin: EdgeInsets.symmetric(vertical: 8.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image.asset(
             ImgAssets.grocery,
@@ -33,6 +32,7 @@ class _TaskItemState extends State<TaskItem> {
               Navigator.pushNamed(context, Routes.taskDetailsRoute);
             },
           ),
+          const Spacer(),
           IconMoreVert(
             onPress: () {},
           ),

@@ -32,9 +32,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           isHomeScreen
-              ? SizedBox(
-                  width: 0.w,
-                )
+              ? const SizedBox()
               : IconButton(
                   onPressed: arrowBack,
                   icon: SvgPicture.asset(ImgAssets.arrowBack),

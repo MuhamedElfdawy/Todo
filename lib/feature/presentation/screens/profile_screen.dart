@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/config/routes/app_routes.dart';
+import 'package:todo_app/feature/presentation/widgets/body_profile_screen.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
-import 'package:todo_app/feature/presentation/widgets/profile_data.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -21,26 +21,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.pushNamed(context, Routes.homeRoute);
                 },
               ),
-              const ProfileData(
-                title: 'NAME',
-                content: 'Muhamed Fdawy',
-              ),
-              const ProfileData(
-                title: 'PHONE',
-                content: '+20 100 803-6610',
-              ),
-              const ProfileData(
-                title: 'LEVEL',
-                content: 'Senior',
-              ),
-              const ProfileData(
-                title: 'YEARS OF EXPERIENCE',
-                content: '7 years',
-              ),
-              const ProfileData(
-                title: 'LOCATION',
-                content: 'Sharkia, Egypt',
-              ),
+              const BodyProfileScreen(),
             ],
           ),
         ),

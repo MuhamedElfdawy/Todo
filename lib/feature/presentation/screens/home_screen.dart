@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 toProfile: () {
                   Navigator.pushNamed(context, Routes.profileRoute);
                 },
+                logout: (){},
               ),
               Text(
                 'My Tasks',

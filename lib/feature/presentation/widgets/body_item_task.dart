@@ -16,6 +16,7 @@ class BodyItemTask extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+
             children: [
               Text(
                 AppString.grocery,
@@ -39,7 +40,6 @@ class BodyItemTask extends StatelessWidget {
             height: 6.h,
           ),
           Row(
-
             children: [
               const Icon(
                 Icons.flag_outlined,

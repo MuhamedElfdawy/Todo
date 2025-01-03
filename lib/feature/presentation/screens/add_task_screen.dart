@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/config/routes/app_routes.dart';
+import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/body_add_task_screen.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
 
@@ -24,7 +24,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               CustomAppBar(
                 title: 'Add new task',
                 arrowBack: () {
-                  Navigator.pushNamed(context, Routes.homeRoute);
+                  Navigator.pushNamed(context, Constants.homeScreen);
                 },
               ),
               const BodyAddTaskScreen(),

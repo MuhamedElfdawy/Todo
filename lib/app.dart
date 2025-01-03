@@ -5,8 +5,8 @@ import 'package:todo_app/config/themes/app_theme.dart';
 import 'package:todo_app/core/utils/app_utils.dart';
 
 class ToDoApp extends StatelessWidget {
-  const ToDoApp({super.key});
-
+  final AppRouter appRouter;
+  const ToDoApp({super.key,required this.appRouter});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -17,7 +17,8 @@ class ToDoApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppString.appName,
         theme: appTheme(),
-        routes: routes,
+        onGenerateRoute: appRouter.generateRoute,
+        // routes: routes,
       ),
     );
   }

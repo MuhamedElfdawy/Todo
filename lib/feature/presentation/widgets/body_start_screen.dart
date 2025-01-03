@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/config/routes/app_routes.dart';
-import 'package:todo_app/feature/presentation/screens/login_screen.dart';
+import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 
 class BodyStartScreen extends StatefulWidget {
@@ -39,7 +38,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
           CustomButton(
             text: "Let's Start ->",
             onTap: (){
-              Navigator.pushNamed(context, Routes.loginRoute);
+              Navigator.pushNamed(context, Constants.loginScreen);
             },
           ),
         ],

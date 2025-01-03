@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
@@ -48,7 +47,7 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
           ),
           CustomTextButton(
             onPress: () {
-              Navigator.pushNamed(context, Routes.loginRoute);
+              Navigator.pushNamed(context, Constants.loginScreen);
             },
             hintText: 'Already have any account?',
             buttonText: 'Sign in',

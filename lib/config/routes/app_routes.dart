@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:todo_app/core/utils/constants.dart';
+import 'package:todo_app/feature/presentation/cubit/todo_cubit.dart';
 import 'package:todo_app/feature/presentation/screens/add_task_screen.dart';
 import 'package:todo_app/feature/presentation/screens/home_screen.dart';
 import 'package:todo_app/feature/presentation/screens/login_screen.dart';
@@ -7,25 +10,53 @@ import 'package:todo_app/feature/presentation/screens/splash_screen.dart';
 import 'package:todo_app/feature/presentation/screens/start_screen.dart';
 import 'package:todo_app/feature/presentation/screens/task_details_screen.dart';
 
-class Routes
-{
-  static const String initialRoute = '/';
-  static const String startRoute = '/startScreen';
-  static const String loginRoute = '/loginScreen';
-  static const String registerRoute = '/registerScreen';
-  static const String homeRoute = '/homeScreen';
-  static const String profileRoute = '/profileScreen';
-  static const String addTaskRoute = '/addTaskScreen';
-  static const String taskDetailsRoute = '/taskDetailsScreen';
+
+
+class AppRouter {
+
+  late TodoCubit todoCubit;
+
+
+
+  Route? generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case Constants.splashScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SplashScreen(),
+        );
+      case Constants.startScreen:
+        return MaterialPageRoute(
+          builder: (_) => const StartScreen(),
+        );
+      case Constants.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
+      case Constants.registerScreen:
+        return MaterialPageRoute(
+          builder: (_) => const RegisterScreen(),
+        );
+      case Constants.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+        );
+      case Constants.profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProfileScreen(),
+        );
+      case Constants.addTaskScreen:
+        return MaterialPageRoute(
+          builder: (_) => const AddTaskScreen(),
+        );
+      case Constants.taskDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const TaskDetailsScreen(),
+        );
+      default:
+        return null;
+    }
+  }
 }
 
-final routes = {
-  Routes.initialRoute : (context) => const SplashScreen(),
-  Routes.startRoute : (context) => const StartScreen(),
-  Routes.loginRoute : (context) => const LoginScreen(),
-  Routes.registerRoute : (context) => const RegisterScreen(),
-  Routes.homeRoute : (context) => const HomeScreen(),
-  Routes.profileRoute : (context) => const ProfileScreen(),
-  Routes.addTaskRoute : (context) => const AddTaskScreen(),
-  Routes.taskDetailsRoute : (context) => const TaskDetailsScreen(),
-};
+
+

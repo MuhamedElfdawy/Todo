@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
+import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/body_item_task.dart';
 import 'package:todo_app/feature/presentation/widgets/icon_more_vert.dart';
 
@@ -29,7 +29,7 @@ class _TaskItemState extends State<TaskItem> {
           ),
           BodyItemTask(
             onPress: () {
-              Navigator.pushNamed(context, Routes.taskDetailsRoute);
+              Navigator.pushNamed(context, Constants.taskDetailsScreen);
             },
           ),
           const Spacer(),

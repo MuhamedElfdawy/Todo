@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/config/routes/app_routes.dart';
+import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
@@ -39,12 +39,12 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
           CustomButton(
             text: 'Sign In',
             onTap: () {
-              Navigator.pushNamed(context, Routes.homeRoute);
+              Navigator.pushNamed(context, Constants.homeScreen);
             },
           ),
           CustomTextButton(
             onPress: () {
-              Navigator.pushNamed(context, Routes.registerRoute);
+              Navigator.pushNamed(context, Constants.registerScreen);
             },
             hintText: 'Didn’t have any account?',
             buttonText: 'Sign Up here',

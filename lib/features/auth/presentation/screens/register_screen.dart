@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
-import 'package:todo_app/feature/presentation/widgets/body_register_screen.dart';
+import 'package:todo_app/features/auth/presentation/widgets/body_register_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

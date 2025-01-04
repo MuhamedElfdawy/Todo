@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/feature/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
+import 'package:todo_app/features/auth/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
 
 class BodyStartScreen extends StatefulWidget {
   const BodyStartScreen({super.key});

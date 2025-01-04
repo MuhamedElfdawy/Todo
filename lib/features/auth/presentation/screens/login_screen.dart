@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/assets_manager.dart';
-import 'package:todo_app/feature/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
-import 'package:todo_app/feature/presentation/widgets/body_login_screen.dart';
-import 'package:todo_app/feature/presentation/widgets/body_start_screen.dart';
+import 'package:todo_app/features/auth/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
+import 'package:todo_app/features/auth/presentation/widgets/body_login_screen.dart';
+import 'package:todo_app/features/auth/presentation/widgets/body_start_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

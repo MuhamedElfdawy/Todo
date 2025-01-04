@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/constants.dart';
-import 'package:todo_app/feature/domain/entities/login_entity.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
@@ -52,12 +51,6 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
               text: 'Sign In',
               onTap: () {
                 if (formKey.currentState!.validate()) {
-                  final user = LoginEntity(
-                    phone: phoneController.text,
-                    password: passController.text,
-                  );
-                  // BlocProvider.of<LoginCubit>(context).login(user);
-                  // context.read<LoginCubit>().login(user);
                   Navigator.pushNamed(context, Constants.homeScreen);
                 }
               },

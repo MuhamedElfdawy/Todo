@@ -19,12 +19,13 @@ class _StartScreenState extends State<RegisterScreen> {
           Container(
             padding: EdgeInsets.only(left: 24.w,bottom: 24.h),
             alignment: Alignment.bottomLeft,
-            height: 400.h,
+            height: 380.h,
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(ImgAssets.picture),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
+
               ),
             ),
             child: Text(

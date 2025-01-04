@@ -5,6 +5,7 @@ import 'package:todo_app/config/routes/app_routes.dart';
 import 'package:todo_app/feature/presentation/cubit/bloc_observer.dart';
 
 void main() {
+
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
 

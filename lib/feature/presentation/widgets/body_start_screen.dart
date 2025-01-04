@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/core/utils/constants.dart';
+import 'package:todo_app/feature/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 
 class BodyStartScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 22.w),
+      padding: EdgeInsets.only(left: 24.w,right: 24.w,top: 24.h),
       child: Column(
         children: [
           Text(
@@ -38,7 +39,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
           CustomButton(
             text: "Let's Start ->",
             onTap: (){
-              Navigator.pushNamed(context, Constants.loginScreen);
+              context.read<BodyToggleCubit>().toggleBody();
             },
           ),
         ],

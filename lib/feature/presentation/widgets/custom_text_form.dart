@@ -6,21 +6,21 @@ import 'package:todo_app/feature/presentation/widgets/phone_drop_down.dart';
 class CustomTextField extends StatefulWidget {
   final String hint;
   final int maxLine;
-  final void Function(String?)? onSaved;
   final void Function(String)? onChange;
   final bool isSuffix;
   final bool isPassword;
   final bool isPhoneNumber;
+  final TextEditingController? controller;
 
   const CustomTextField({
     super.key,
     required this.hint,
     this.maxLine = 1,
-    this.onSaved,
     this.onChange,
     this.isSuffix = false,
     this.isPassword = true,
     this.isPhoneNumber = false,
+    this.controller,
   });
 
   @override
@@ -28,15 +28,15 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  bool isPassHidden = false;
+  bool isPassHidden = true;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: TextFormField(
+        controller: widget.controller,
         onChanged: widget.onChange,
-        onSaved: widget.onSaved,
         validator: (value) {
           if (value?.isEmpty ?? true) {
             return 'Field is required';

@@ -1,8 +1,7 @@
 class Constants
 {
-  static const baseUrl = '';
+  static const baseUrl = 'https://todo.iraqsapp.com/auth';
   static const splashScreen = '/';
-  static const startScreen = '/startScreen';
   static const loginScreen = '/loginScreen';
   static const registerScreen = '/registerScreen';
   static const homeScreen = '/homeScreen';

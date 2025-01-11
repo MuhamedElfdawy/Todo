@@ -17,8 +17,8 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     required this.title,
-    this.fontSize = 16,
     this.isHomeScreen = false,
+    this.fontSize = 16,
     this.toProfile,
     this.logout,
     this.arrowBack,

@@ -5,11 +5,13 @@ import 'package:todo_app/core/utils/app_color.dart';
 class CustomDropDownButton extends StatefulWidget {
   final bool isRegister;
   final List<String> items;
+  final void Function(String?)? onChange;
 
   const CustomDropDownButton({
     super.key,
     this.isRegister = false,
     required this.items,
+    this.onChange
   });
 
   @override
@@ -62,8 +64,9 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
             );
           }).toList() ,
           onChanged: (String? newValue) {
-            selectedItems = newValue;
+              selectedItems = newValue;
             setState(() {});
+            widget.onChange!(newValue);
           },
         ),
       ),

@@ -1,3 +1,4 @@
+
 class Constants
 {
   static const baseUrl = 'https://todo.iraqsapp.com/auth';
@@ -10,6 +11,6 @@ class Constants
   static const taskDetailsScreen = '/taskDetailsScreen';
 
   static const List<String> filters = ['All','Inpogress','Waiting','Finished'];
-  static const List<String> experience = ['Beginner', 'Junior', 'Mid-Level', 'Senior', 'Lead'];
+  static const List<String> experience = ['fresh', 'junior', 'midLevel', 'senior'];
   static const List<String> priority = ['Low', 'Medium','Heigh'];
 }

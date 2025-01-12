@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:todo_app/core/network/token.dart';
-import 'package:todo_app/features/auth/domain/entities/user_entity.dart';
+import 'package:todo_app/features/auth/domain/entities/Auth_entity.dart';
 import 'package:todo_app/features/auth/domain/use_cases/auth_use_case.dart';
 
 part 'auth_state.dart';

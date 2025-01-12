@@ -10,7 +10,11 @@ import 'package:todo_app/features/auth/domain/use_cases/auth_use_case.dart';
 import 'package:todo_app/features/auth/presentation/cubit/auth/auth_cubit.dart';
 import 'package:todo_app/features/auth/presentation/cubit/body_toggle_cubit/toggle_cubit.dart';
 import 'package:todo_app/features/auth/presentation/screens/login_screen.dart';
-import 'package:todo_app/feature/presentation/screens/profile_screen.dart';
+import 'package:todo_app/features/profile/data/data_sources/profile_remote_data_source.dart';
+import 'package:todo_app/features/profile/data/repositories/profile_repository_impl.dart';
+import 'package:todo_app/features/profile/domain/use_cases/profile_use_case.dart';
+import 'package:todo_app/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:todo_app/features/profile/presentation/screen/profile_screen.dart';
 import 'package:todo_app/feature/presentation/screens/splash_screen.dart';
 import 'package:todo_app/feature/presentation/screens/task_details_screen.dart';
 import 'package:todo_app/features/auth/presentation/screens/register_screen.dart';
@@ -55,7 +59,10 @@ class AppRouter {
         );
       case Constants.profileScreen:
         return MaterialPageRoute(
-          builder: (_) => const ProfileScreen(),
+          builder: (_) => BlocProvider(
+              create: (context) => ProfileCubit(profileUseCase: ProfileUseCase(repository: ProfileRepositoryImpl(profileDataSource: ProfileDataSource(dio: Dio())))),
+              child: const ProfileScreen(),
+          ),
         );
       case Constants.addTaskScreen:
         return MaterialPageRoute(

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:todo_app/features/auth/domain/entities/user_entity.dart';
+import 'package:todo_app/features/auth/domain/entities/Auth_entity.dart';
 import 'package:todo_app/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthUseCase {
@@ -7,14 +7,14 @@ class AuthUseCase {
 
   AuthUseCase(this.repository);
 
-  Future<Either<String, UserEntity>> login(String phone, String password) {
+  Future<Either<String, AuthEntity>> login(String phone, String password) {
     if (phone.isEmpty || password.isEmpty) {
       return Future.value(left('Invalid phone or password'));
     }
     return repository.login(phone: phone, password: password);
   }
 
-  Future<Either<String, UserEntity>> register({
+  Future<Either<String, AuthEntity>> register({
     required String name,
     required String phone,
     required String password,

@@ -79,8 +79,8 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
                         ),
                         padding:  EdgeInsets.symmetric(
                             vertical:16.sp),
-                        behavior: SnackBarBehavior.floating,
-                        elevation: 0,
+                        // behavior: SnackBarBehavior.floating,
+                        // elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),

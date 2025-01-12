@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:todo_app/features/auth/data/data_sources/auth_api_service.dart';
-import 'package:todo_app/features/auth/domain/entities/user_entity.dart';
+import 'package:todo_app/features/auth/domain/entities/Auth_entity.dart';
 import 'package:todo_app/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository{
@@ -10,10 +10,10 @@ class AuthRepositoryImpl implements AuthRepository{
   AuthRepositoryImpl({required this.authDataSource});
 
   @override
-  Future<Either<String, UserEntity>> login({required String phone, required String password}) async{
+  Future<Either<String, AuthEntity>> login({required String phone, required String password}) async{
     try{
       final userModel = await authDataSource.login(phone: phone, password: password);
-      return Right(UserEntity(
+      return Right(AuthEntity(
           id: userModel.id,
           accessToken: userModel.accessToken,
           refreshToken: userModel.refreshToken,
@@ -24,7 +24,7 @@ class AuthRepositoryImpl implements AuthRepository{
   }
 
   @override
-  Future<Either<String, UserEntity>> register({required String name, required String phone, required String password, required int experience, required String address, required String level}) async{
+  Future<Either<String, AuthEntity>> register({required String name, required String phone, required String password, required int experience, required String address, required String level}) async{
     try{
       final userModel = await authDataSource.register(
           name: name,
@@ -34,7 +34,7 @@ class AuthRepositoryImpl implements AuthRepository{
           address: address,
           level: level,
       );
-      return Right(UserEntity(id: userModel.id, accessToken: userModel.accessToken, refreshToken: userModel.refreshToken));
+      return Right(AuthEntity(id: userModel.id, accessToken: userModel.accessToken, refreshToken: userModel.refreshToken));
     }catch (e) {
       debugPrint('$e');
       return Left('register failed $e');

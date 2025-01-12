@@ -56,11 +56,11 @@ class AuthDataSource {
 
   Future<void> refreshToken({required String newAccessToken}) async {
     final response =
-        await dio.get('${Constants.baseUrl}/refresh-token?token=$newAccessToken');
+    await dio.get('${Constants.baseUrl}/refresh-token?token=$newAccessToken');
     await saveToken(
-        id: response.data['_id'],
-        accessToken: response.data['access_token'],
-        refreshToken: newAccessToken,
+      id: response.data['_id'],
+      accessToken: response.data['access_token'],
+      refreshToken: response.data['refresh_token'],
     );
   }
 }

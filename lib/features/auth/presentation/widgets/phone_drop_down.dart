@@ -10,6 +10,7 @@ class PhoneDropDown extends StatefulWidget {
 }
 
 class _PhoneDropDownState extends State<PhoneDropDown> {
+  List<String> item = ['+20','+966','+971','+212','+213','964','+249','+967','+963','+962'];
   String selectedCountryCode = '+20';
   String selectedFlag = 'assets/flags/egypt.png';
 

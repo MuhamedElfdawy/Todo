@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:todo_app/features/auth/domain/entities/user_entity.dart';
+import 'package:todo_app/features/auth/domain/entities/Auth_entity.dart';
 
 abstract class AuthRepository {
-  Future<Either<String, UserEntity>> login({
+  Future<Either<String, AuthEntity>> login({
     required String phone,
     required String password,
   });
 
-  Future<Either<String, UserEntity>> register({
+  Future<Either<String, AuthEntity>> register({
     required String name,
     required String phone,
     required String password,

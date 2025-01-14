@@ -1,12 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:todo_app/core/network/token.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/features/auth/data/models/user_model.dart';
+import 'package:todo_app/main.dart';
 
 class AuthDataSource {
-  final Dio dio;
-
-  AuthDataSource({required this.dio});
 
   Future<UserModel> login(
       {required String phone, required String password}) async {

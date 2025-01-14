@@ -52,14 +52,14 @@ class CustomAppBar extends StatelessWidget {
                         onPressed: toProfile,
                         icon: Icon(
                           Icons.account_circle_outlined,
-                          size: 28.sp,
+                          size: 28,
                         )),
                     IconButton(
                         onPressed: logout,
                         icon: Icon(
                           Icons.logout,
                           color: AppColors.appColor,
-                          size: 28.sp,
+                          size: 28,
                         )),
                   ],
                 )

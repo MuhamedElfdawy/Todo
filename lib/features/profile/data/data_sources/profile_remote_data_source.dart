@@ -5,14 +5,9 @@ import 'package:todo_app/features/profile/data/models/profile_model.dart';
 import 'package:todo_app/main.dart';
 
 class ProfileDataSource {
-  final Dio dio;
-  ProfileDataSource({required this.dio});
 
    Future<ProfileModel> getProfileData () async{
      final token = prefs.getString('accessToken');
-     if(token == null){
-       throw Exception('token not found');
-     }
      try{
        final response = await dio.get(
            '${Constants.baseUrl}/profile',

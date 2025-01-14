@@ -16,6 +16,7 @@ class _FilterActiveButtonState extends State<FilterActiveButton> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: Constants.filters
           .map(
             (filter) => GestureDetector(

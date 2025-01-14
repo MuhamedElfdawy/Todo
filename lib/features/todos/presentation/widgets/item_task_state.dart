@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
+import 'package:todo_app/features/todos/domain/entities/todos_entity.dart';
 
-class ItemTaskState extends StatefulWidget {
-  const ItemTaskState({super.key});
+class ItemTaskState extends StatelessWidget {
+  final ToDosEntity todo;
+  const ItemTaskState({super.key, required this.todo});
 
-  @override
-  State<ItemTaskState> createState() => _ItemTaskStateState();
-}
-
-class _ItemTaskStateState extends State<ItemTaskState> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,9 +17,9 @@ class _ItemTaskStateState extends State<ItemTaskState> {
         borderRadius: BorderRadius.circular(5.r),
       ),
       child: Text(
-        'Waiting',
+        todo.status,
         style: TextStyle(
-          fontSize: 12.sp,
+          fontSize: 12,
           fontWeight: FontWeight.w500,
           color: AppColors.waitingColor,
         ),

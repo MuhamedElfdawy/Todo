@@ -21,7 +21,7 @@ class CustomFloatingButton extends StatelessWidget {
             child: Icon(
               Icons.qr_code,
               color: AppColors.appColor,
-              size: 24.sp,
+              size: 24,
             ),
           ),
           SizedBox(height: 16.h,),
@@ -33,7 +33,7 @@ class CustomFloatingButton extends StatelessWidget {
             child: Icon(
               Icons.add,
               color: Colors.white,
-              size: 32.sp,
+              size: 32,
             ),
           ),
         ],

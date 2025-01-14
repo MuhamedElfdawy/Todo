@@ -22,7 +22,7 @@ class ProfileData extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
               color: AppColors.hintColor.withOpacity(0.8),
             ),
@@ -31,7 +31,7 @@ class ProfileData extends StatelessWidget {
           Text(
             content,
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.hintColor,
             ),

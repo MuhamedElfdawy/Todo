@@ -1,9 +1,12 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/screens/add_task_screen.dart';
-import 'package:todo_app/feature/presentation/screens/home_screen.dart';
+import 'package:todo_app/features/todos/data/data_sources/todo_remote_data_source.dart';
+import 'package:todo_app/features/todos/data/repositories/todos_repository_impl.dart';
+import 'package:todo_app/features/todos/domain/use_cases/todos_use_case.dart';
+import 'package:todo_app/features/todos/presentation/cubit/todos_cubit.dart';
+import 'package:todo_app/features/todos/presentation/screens/home_screen.dart';
 import 'package:todo_app/features/auth/data/data_sources/auth_api_service.dart';
 import 'package:todo_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:todo_app/features/auth/domain/use_cases/auth_use_case.dart';
@@ -33,7 +36,7 @@ class AppRouter {
           builder: (_) => MultiBlocProvider(
               providers: [
                 BlocProvider(create: (context) => BodyToggleCubit(),),
-                BlocProvider(create: (context) => AuthCubit(authUseCase: AuthUseCase(AuthRepositoryImpl(authDataSource: AuthDataSource(dio: Dio())))),)
+                BlocProvider(create: (context) => AuthCubit(authUseCase: AuthUseCase(AuthRepositoryImpl(authDataSource: AuthDataSource()))),)
               ],
               child: const LoginScreen(),
           ),
@@ -43,8 +46,7 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => AuthCubit(
                 authUseCase: AuthUseCase(AuthRepositoryImpl(
-                    authDataSource: AuthDataSource(
-                        dio: Dio())))),
+                    authDataSource: AuthDataSource()))),
             child: const RegisterScreen(),
           ),
         );
@@ -52,7 +54,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
               providers: [
-            BlocProvider(create: (context) => AuthCubit(authUseCase: AuthUseCase(AuthRepositoryImpl(authDataSource: AuthDataSource(dio: Dio())))),)
+            BlocProvider(create: (context) => TodosCubit(toDosUseCase: ToDosUseCase(repository: ToDosRepositoryImpl(toDosDataSource: ToDosDataSource()))),)
           ],
               child: const HomeScreen()
           ),
@@ -60,7 +62,7 @@ class AppRouter {
       case Constants.profileScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-              create: (context) => ProfileCubit(profileUseCase: ProfileUseCase(repository: ProfileRepositoryImpl(profileDataSource: ProfileDataSource(dio: Dio())))),
+              create: (context) => ProfileCubit(profileUseCase: ProfileUseCase(repository: ProfileRepositoryImpl(profileDataSource: ProfileDataSource()))),
               child: const ProfileScreen(),
           ),
         );

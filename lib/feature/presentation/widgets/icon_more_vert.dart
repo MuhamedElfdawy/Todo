@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconMoreVert extends StatelessWidget {
   final void Function() onPress;
@@ -10,7 +9,7 @@ class IconMoreVert extends StatelessWidget {
     return IconButton(
       onPressed: onPress,
       icon: const Icon(Icons.more_vert,),
-      iconSize: 28.sp,
+      iconSize: 28,
     );
   }
 }

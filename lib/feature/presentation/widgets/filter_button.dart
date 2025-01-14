@@ -11,7 +11,7 @@ class FilterButton extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 12.w),
-      margin: EdgeInsets.symmetric(vertical: 16.h, horizontal: 6.w),
+      margin: EdgeInsets.symmetric(vertical: 16.h,),
       decoration: BoxDecoration(
         color: isActive ?
         AppColors.appColor :
@@ -21,7 +21,7 @@ class FilterButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            fontSize: 16.sp,
+            fontSize: 16,
             fontWeight: isActive ?
             FontWeight.bold :
             FontWeight.w400,

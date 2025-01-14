@@ -6,7 +6,7 @@ import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_app_bar.dart';
 import 'package:todo_app/feature/presentation/widgets/filter_active_button.dart';
 import 'package:todo_app/feature/presentation/widgets/floating_button.dart';
-import 'package:todo_app/feature/presentation/widgets/task_item.dart';
+import 'package:todo_app/features/todos/presentation/widgets/todo_list_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
               CustomAppBar(
               isHomeScreen: true,
               title: 'Home',
-              fontSize: 24.sp,
+              fontSize: 24,
               toProfile: () {
                 Navigator.pushNamed(context, Constants.profileScreen);
               },
@@ -37,21 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.restorablePushReplacementNamed(context, Constants.loginScreen);
               },
                             ),
-              Text(
+              const Text(
                 'My Tasks',
                 style: TextStyle(
-                  fontSize: 16.sp,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.hintColor,
                 ),
               ),
               const FilterActiveButton(),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 3,
-                  itemBuilder: (context, index) => const TaskItem(),
-                ),
-              ),
+              const ToDoListView(),
             ],
           ),
         ),

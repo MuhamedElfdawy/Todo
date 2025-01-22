@@ -8,6 +8,7 @@ import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
 import 'package:todo_app/features/auth/presentation/cubit/auth/auth_cubit.dart';
+import 'package:todo_app/features/auth/presentation/widgets/custom_phone_field.dart';
 
 
 class BodyRegisterScreen extends StatefulWidget {
@@ -19,12 +20,13 @@ class BodyRegisterScreen extends StatefulWidget {
 
 class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
   final nameController = TextEditingController();
-  final phoneController = TextEditingController();
   final passwordController = TextEditingController();
   final experienceController = TextEditingController();
   final levelController = TextEditingController();
   final addressController = TextEditingController();
   String? selectedLevel;
+  String? countryCode;
+  String? number;
 
   final formKey = GlobalKey<FormState>();
 
@@ -40,11 +42,13 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
               controller: nameController,
               hint: 'Name...',
             ),
-             CustomTextField(
-               controller: phoneController,
-              hint: '123 456-7890',
-              isPhoneNumber: true,
-            ),
+             SizedBox(height: 8.h,),
+             CustomPhoneField(
+                 onChange: (value){
+                   countryCode = value.countryCode;
+                   number = value.number;
+                 },
+             ),
             CustomTextField(
               controller: experienceController,
               hint: 'Years of experience...',
@@ -110,7 +114,7 @@ class _BodyRegisterScreenState extends State<BodyRegisterScreen> {
                     if(formKey.currentState!.validate()){
                       context.read<AuthCubit>().register(
                         name: nameController.text,
-                        phone: phoneController.text,
+                        phone: countryCode!+number!,
                         password: passwordController.text,
                         experience: int.parse(experienceController.text),
                         address: addressController.text,

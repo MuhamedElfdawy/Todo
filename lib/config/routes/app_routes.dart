@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/core/utils/constants.dart';
-import 'package:todo_app/feature/presentation/screens/add_task_screen.dart';
+import 'package:todo_app/features/create/presentation/screen/add_task_screen.dart';
 import 'package:todo_app/features/todos/data/data_sources/todo_remote_data_source.dart';
 import 'package:todo_app/features/todos/data/repositories/todos_repository_impl.dart';
 import 'package:todo_app/features/todos/domain/use_cases/todos_use_case.dart';
-import 'package:todo_app/features/todos/presentation/cubit/todos_cubit.dart';
+import 'package:todo_app/features/todos/presentation/cubit/todos/todos_cubit.dart';
 import 'package:todo_app/features/todos/presentation/screens/home_screen.dart';
 import 'package:todo_app/features/auth/data/data_sources/auth_api_service.dart';
 import 'package:todo_app/features/auth/data/repositories/auth_repository_impl.dart';
@@ -18,8 +18,8 @@ import 'package:todo_app/features/profile/data/repositories/profile_repository_i
 import 'package:todo_app/features/profile/domain/use_cases/profile_use_case.dart';
 import 'package:todo_app/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:todo_app/features/profile/presentation/screen/profile_screen.dart';
-import 'package:todo_app/feature/presentation/screens/splash_screen.dart';
-import 'package:todo_app/feature/presentation/screens/task_details_screen.dart';
+import 'package:todo_app/features/auth/presentation/screens/splash_screen.dart';
+import 'package:todo_app/features/task/presentation/screen/task_details_screen.dart';
 import 'package:todo_app/features/auth/presentation/screens/register_screen.dart';
 
 
@@ -54,8 +54,8 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
               providers: [
-            BlocProvider(create: (context) => TodosCubit(toDosUseCase: ToDosUseCase(repository: ToDosRepositoryImpl(toDosDataSource: ToDosDataSource()))),)
-          ],
+            BlocProvider(create: (context) => TodosCubit(toDosUseCase: ToDosUseCase(repository: ToDosRepositoryImpl(toDosDataSource: ToDosDataSource()))),),
+              ],
               child: const HomeScreen()
           ),
         );

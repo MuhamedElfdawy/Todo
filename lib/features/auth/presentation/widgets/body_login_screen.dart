@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
 import 'package:todo_app/features/auth/presentation/cubit/auth/auth_cubit.dart';
+import 'package:todo_app/features/auth/presentation/widgets/custom_phone_field.dart';
 
 class BodyLoginScreen extends StatefulWidget {
   const BodyLoginScreen({super.key});
@@ -20,6 +22,8 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
   final passController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
+  String? countryCode;
+  String? number;
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +44,11 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
             SizedBox(
               height: 16.h,
             ),
-            CustomTextField(
-              controller: phoneController,
-              hint: '123 456-7890',
-              isPhoneNumber: true,
+            CustomPhoneField(
+              onChange: (value){
+                countryCode = value.countryCode;
+                number = value.number;
+              },
             ),
             CustomTextField(
               controller: passController,
@@ -92,9 +97,10 @@ class _BodyLoginScreenState extends State<BodyLoginScreen> {
               child: CustomButton(
                 text: 'Sign In',
                 onTap: () {
+
                   if (formKey.currentState!.validate()) {
                     context.read<AuthCubit>().login(
-                        phone: phoneController.text,
+                        phone: countryCode!+number!,
                         password: passController.text);
                   }
                 },

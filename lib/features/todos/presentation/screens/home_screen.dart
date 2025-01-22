@@ -8,6 +8,7 @@ import 'package:todo_app/feature/presentation/widgets/filter_active_button.dart'
 import 'package:todo_app/feature/presentation/widgets/floating_button.dart';
 import 'package:todo_app/features/todos/presentation/widgets/todo_list_view.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -16,6 +17,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  String activeButton = 'All';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

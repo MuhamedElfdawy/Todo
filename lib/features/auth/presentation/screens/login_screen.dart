@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           SizedBox(
             height: 480.h,
-            child: Image.asset(ImgAssets.picture),
+            child: Image.asset(ImgAssets.picture,fit: BoxFit.fill,),
           ),
           BlocBuilder<BodyToggleCubit, bool>(
             builder: (context, showStartBody) =>

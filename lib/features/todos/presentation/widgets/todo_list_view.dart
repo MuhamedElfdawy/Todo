@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/features/todos/presentation/cubit/todos_cubit.dart';
+import 'package:todo_app/features/todos/presentation/cubit/todos/todos_cubit.dart';
 import 'package:todo_app/features/todos/presentation/widgets/task_item.dart';
 
 class ToDoListView extends StatelessWidget {
@@ -17,7 +17,7 @@ class ToDoListView extends StatelessWidget {
           } else if(state is TodosLoaded){
             return Expanded(
               child: ListView.builder(
-                itemCount: state.todo.length,
+                itemCount: state.todo.length ,
                 itemBuilder: (context, index) => TaskItem(todo: state.todo[index],),
               ),
             );

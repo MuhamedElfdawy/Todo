@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
 import 'package:todo_app/feature/presentation/widgets/icon_more_vert.dart';
 import 'package:todo_app/features/todos/domain/entities/todos_entity.dart';
-import 'package:todo_app/features/todos/presentation/widgets/item_task_state.dart';
+import 'package:todo_app/features/todos/presentation/widgets/task_item_status.dart';
 
 class BodyItemTask extends StatelessWidget {
   final ToDosEntity todo;
@@ -53,19 +53,23 @@ class BodyItemTask extends StatelessWidget {
             padding: EdgeInsets.only(right: 48.w),
             child: Row(
               children: [
-                const Icon(
+                 Icon(
                   Icons.flag_outlined,
                   size: 16,
-                  color: AppColors.appColor,
+                  color: todo.priority.toLowerCase().contains('high') ? AppColors.waitingColor :
+                  todo.priority.toLowerCase().contains('medium') ? AppColors.inprogressColor :
+                  todo.priority.toLowerCase().contains('low') ? AppColors.finishedColor : null,
                 ),
                 SizedBox(
                   width: 4.w,
                 ),
                 Text(
-                  todo.status,
-                  style: const TextStyle(
+                  todo.priority,
+                  style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    color: AppColors.inprogressColor,
+                    color: todo.priority.toLowerCase().contains('high') ? AppColors.waitingColor :
+                    todo.priority.toLowerCase().contains('medium') ? AppColors.inprogressColor :
+                    todo.priority.toLowerCase().contains('low') ? AppColors.finishedColor : null,
                   ),
                 ),
                 const Spacer(),

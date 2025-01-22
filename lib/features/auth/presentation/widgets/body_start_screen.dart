@@ -39,7 +39,7 @@ class _BodyStartScreenState extends State<BodyStartScreen> {
           CustomButton(
             text: "Let's Start ->",
             onTap: (){
-              context.read<BodyToggleCubit>().toggleBody();
+              context.read<BodyToggleCubit>();
             },
           ),
         ],

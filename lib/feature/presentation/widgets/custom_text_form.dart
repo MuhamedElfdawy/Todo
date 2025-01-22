@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/core/utils/app_color.dart';
-import 'package:todo_app/features/auth/presentation/widgets/phone_drop_down.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hint;
@@ -9,7 +8,6 @@ class CustomTextField extends StatefulWidget {
   final void Function(String)? onChange;
   final bool isSuffix;
   final bool isPassword;
-  final bool isPhoneNumber;
   final TextEditingController? controller;
 
   const CustomTextField({
@@ -19,7 +17,6 @@ class CustomTextField extends StatefulWidget {
     this.onChange,
     this.isSuffix = false,
     this.isPassword = true,
-    this.isPhoneNumber = false,
     this.controller,
   });
 
@@ -49,8 +46,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
         cursorColor: AppColors.appColor,
         maxLines: widget.maxLine,
         decoration: InputDecoration(
-          prefixIcon: widget.isPhoneNumber ?
-          const PhoneDropDown() : null,
           suffixIcon: widget.isSuffix ? widget.isPassword
               ? IconButton(
             onPressed: () {

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/main.dart';
 
@@ -43,7 +42,6 @@ Future<void> clearToken() async {
    if(response.statusCode == 200){
      final newAccessToken = response.data['access_token'];
      await prefs.setString('accessToken', newAccessToken);
-     debugPrint(newAccessToken);
      return newAccessToken;
    } else if(response.statusCode == 403){
      throw Exception('Refresh token expired, Please Login again.');

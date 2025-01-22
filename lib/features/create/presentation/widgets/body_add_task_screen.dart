@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/utils/constants.dart';
-import 'package:todo_app/feature/presentation/widgets/add_image.dart';
+import 'package:todo_app/features/create/presentation/widgets/add_image.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
-import 'package:todo_app/feature/presentation/widgets/title_text.dart';
+import 'package:todo_app/features/create/presentation/widgets/title_text.dart';
 
 class BodyAddTaskScreen extends StatelessWidget {
   const BodyAddTaskScreen({super.key});

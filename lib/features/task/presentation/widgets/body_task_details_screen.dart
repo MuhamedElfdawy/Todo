@@ -6,7 +6,7 @@ import 'package:todo_app/core/utils/assets_manager.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_drop_button.dart';
 import 'package:todo_app/feature/presentation/widgets/custom_text_form.dart';
-import 'package:todo_app/feature/presentation/widgets/title_text.dart';
+import 'package:todo_app/features/create/presentation/widgets/title_text.dart';
 
 class BodyTaskDetailsScreen extends StatelessWidget {
   const BodyTaskDetailsScreen({super.key});

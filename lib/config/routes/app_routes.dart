@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/core/utils/constants.dart';
 import 'package:todo_app/features/create/presentation/screen/add_task_screen.dart';
+import 'package:todo_app/features/task/data/data_sources/task_remote_data_source.dart';
+import 'package:todo_app/features/task/data/repositories/task_repository_impl.dart';
+import 'package:todo_app/features/task/domain/use_cases/task_use_case.dart';
+import 'package:todo_app/features/task/presentation/cubit/task_cubit.dart';
 import 'package:todo_app/features/todos/data/data_sources/todo_remote_data_source.dart';
 import 'package:todo_app/features/todos/data/repositories/todos_repository_impl.dart';
 import 'package:todo_app/features/todos/domain/use_cases/todos_use_case.dart';
@@ -72,7 +76,9 @@ class AppRouter {
         );
       case Constants.taskDetailsScreen:
         return MaterialPageRoute(
-          builder: (_) => const TaskDetailsScreen(),
+          builder: (_) => BlocProvider(create: (context) => TaskCubit(taskUseCase: TaskUseCase(repository: TaskRepositoryImpl(dataSource: TaskDataSource()))),
+          child: const TaskDetailsScreen(),
+          ),
         );
       default:
         return null;

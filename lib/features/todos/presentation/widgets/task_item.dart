@@ -20,16 +20,21 @@ class _TaskItemState extends State<TaskItem> {
       padding: EdgeInsets.symmetric(vertical: 12.h),
       child: Row(
         children: [
-          Image.network(
-            'https://todo.iraqsapp.com/images/${widget.todo.img}',
+          // Image.network(
+          //   'https://todo.iraqsapp.com/images/${widget.todo.img}',
+          //   fit: BoxFit.contain,
+          //   height: 65.h,
+          //   width: 80.w,
+          //   errorBuilder: (context, error, stackTrace) => Image.asset(ImgAssets.grocery,
+          //     fit: BoxFit.contain,
+          //     height: 65.h,
+          //     width: 80.w,
+          //   ),
+          // ),
+          Image.asset(ImgAssets.grocery,
             fit: BoxFit.contain,
             height: 65.h,
             width: 80.w,
-            errorBuilder: (context, error, stackTrace) => Image.asset(ImgAssets.grocery,
-              fit: BoxFit.contain,
-              height: 65.h,
-              width: 80.w,
-            ),
           ),
          BodyItemTask(
              todo: widget.todo,

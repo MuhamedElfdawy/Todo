@@ -8,6 +8,7 @@ import 'package:todo_app/features/todos/presentation/widgets/task_item_status.da
 class BodyItemTask extends StatelessWidget {
   final ToDosEntity todo;
   final void Function() onPress;
+
   const BodyItemTask({super.key, required this.todo, required this.onPress});
 
   @override
@@ -33,7 +34,13 @@ class BodyItemTask extends StatelessWidget {
               const Spacer(),
               ItemTaskState(todo: todo,),
               IconMoreVert(
-                onPress: () {},
+                onPress: (value) {
+                  if (value == 'edit') {
+                    debugPrint('edit task');
+                  } else if (value == 'delete') {
+                    debugPrint('delete task');
+                  }
+                },
               ),
             ],
           ),
@@ -53,12 +60,16 @@ class BodyItemTask extends StatelessWidget {
             padding: EdgeInsets.only(right: 48.w),
             child: Row(
               children: [
-                 Icon(
+                Icon(
                   Icons.flag_outlined,
                   size: 16,
-                  color: todo.priority.toLowerCase().contains('high') ? AppColors.waitingColor :
-                  todo.priority.toLowerCase().contains('medium') ? AppColors.inprogressColor :
-                  todo.priority.toLowerCase().contains('low') ? AppColors.finishedColor : null,
+                  color: todo.priority.toLowerCase().contains('high')
+                      ? AppColors.waitingColor
+                      :
+                  todo.priority.toLowerCase().contains('medium') ? AppColors
+                      .inprogressColor :
+                  todo.priority.toLowerCase().contains('low') ? AppColors
+                      .finishedColor : null,
                 ),
                 SizedBox(
                   width: 4.w,
@@ -67,14 +78,18 @@ class BodyItemTask extends StatelessWidget {
                   todo.priority,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    color: todo.priority.toLowerCase().contains('high') ? AppColors.waitingColor :
-                    todo.priority.toLowerCase().contains('medium') ? AppColors.inprogressColor :
-                    todo.priority.toLowerCase().contains('low') ? AppColors.finishedColor : null,
+                    color: todo.priority.toLowerCase().contains('high')
+                        ? AppColors.waitingColor
+                        :
+                    todo.priority.toLowerCase().contains('medium') ? AppColors
+                        .inprogressColor :
+                    todo.priority.toLowerCase().contains('low') ? AppColors
+                        .finishedColor : null,
                   ),
                 ),
                 const Spacer(),
                 Text(
-                  todo.date.substring(0,10),
+                  todo.date.substring(0, 10),
                   style: const TextStyle(
                       color: AppColors.hintColor
                   ),

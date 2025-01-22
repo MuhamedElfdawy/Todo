@@ -50,13 +50,13 @@ class CustomAppBar extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: toProfile,
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.account_circle_outlined,
                           size: 28,
                         )),
                     IconButton(
                         onPressed: logout,
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.logout,
                           color: AppColors.appColor,
                           size: 28,
@@ -65,7 +65,13 @@ class CustomAppBar extends StatelessWidget {
                 )
               : isTaskDetailsScreen
                   ? IconMoreVert(
-                      onPress: () {},
+                      onPress: (value) {
+                        if (value == 'edit') {
+                          debugPrint('edit task');
+                        } else if (value == 'delete') {
+                          debugPrint('delete task');
+                        }
+                      },
                     )
                   : const SizedBox(),
         ],

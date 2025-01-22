@@ -8,6 +8,6 @@ class ToDosUseCase {
   ToDosUseCase({required this.repository});
 
   Future<Either<String, List<ToDosEntity>>> call() async{
-    return repository.getToDos();
+    return await repository.getToDos();
   }
 }
